@@ -4,11 +4,11 @@ import Url from "../model/url";
 export const createUrl = async (req: express.Request, res: express.Response) => {
     try {
         const { fullUrl } = req.body;
-        const urlExist = await Url.find({ fullUrl });
-        if(urlExist.length > 0){
+        const urlExist = await Url.findOne({ fullUrl });
+        if(urlExist){
             res.status(409).send(urlExist)
         } else {
-            const shortUrl = await Url.create({ fullUrl })
+            const shortUrl = await Url.create({ fullUrl });
             res.status(201).send(shortUrl)
         }
     } catch (error) {

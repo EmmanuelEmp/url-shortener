@@ -108,8 +108,8 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   // "include": ["src/**/*"]
-  // "include": [
-  //   "src",
-  //   "src/database/types/custom.ts" // Add your custom.ts file here
-  // ]
+  "include": [
+    "src",
+    // "src/database/types/custom.ts" // Add your custom.ts file here
+  ]
 }
