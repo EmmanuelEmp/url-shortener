@@ -20,7 +20,7 @@ export const createUrl = async (req: express.Request, res: express.Response) => 
 
 export const getAllUrl = async (req: express.Request, res: express.Response) => {
     try {
-        const urls = await Url.find();
+        const urls = await Url.find().sort({ createdAt: -1});
         if(urls.length < 0) {
             res.status(404).send({ message: "No url found"});
         }else {
